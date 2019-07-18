@@ -1,0 +1,74 @@
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <nav id="sidebar" class="active"> 
+    <div class="sidebar-header">
+        <img src="img/logo1.png" alt="" width="60px">
+    </div>
+
+    <ul class="list-unstyled components">
+
+      <li *ngIf="isHome; else homeBlock" class="active">
+        <a href="/"><i class="fas fa-home"></i><br>Home</a>
+      </li>
+      <ng-template #homeBlock><li>
+        <a href="/"><i class="fas fa-home"></i><br>Home</a></li>
+      </ng-template>
+
+      <li *ngIf="isAttendance; else attendanceBlock" class="active">
+        <a href="/attendance" style="padding: 20px 0px !important;"><i class="fas fa-user-check"></i>Attendance</a></li>
+      <ng-template #attendanceBlock><li>
+        <a href="/attendance" style="padding: 20px 0px !important;"><i class="fas fa-user-check"></i>Attendance</a></li>
+      </ng-template>
+          
+      <li *ngIf="isProgress; else progressBlock" class="active">
+        <a href="/progress"><i class="fas fa-edit"></i>Progress</a>
+      </li>
+      <ng-template #progressBlock><li>
+        <a href="/progress"><i class="fas fa-edit"></i>Progress</a></li>
+      </ng-template>
+
+      <li *ngIf="isPlanning; else planningBlock" class="active">
+        <a href="/planning"><i class="fas fa-calendar-alt"></i>Planning</a>
+      </li>
+      <ng-template #planningBlock><li>
+        <a href="/planning"><i class="fas fa-calendar-alt"></i>Planning</a></li>
+      </ng-template>
+
+      <li *ngIf="isReports; else reportBlock" class="active">
+        <a href="/reports"><i class="fas fa-chart-bar"></i>Reports</a>
+      </li>
+      <ng-template #reportBlock><li>
+        <a href="/reports"><i class="fas fa-chart-bar"></i>Reports</a></li>
+      </ng-template>
+
+      <li *ngIf="isActivity; else activityBlock" class="active">
+        <a href="/activity"><i class="fas fa-cubes"></i>Activities</a>
+      </li>
+      <ng-template #activityBlock><li>
+        <a href="/activity"><i class="fas fa-cubes"></i>Activities</a></li>
+      </ng-template>      
+                
+    </ul>
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    });
+</script>
+

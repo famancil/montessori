@@ -1,0 +1,10 @@
+{
+	"/api": {
+		"target": "https://bloomapi-3e845.firebaseapp.com/progress/cycles/1/students/1",
+		"secure": false,
+		"pathRewrite": {
+			"^/api": ""
+		},
+		"changeOrigin": true
+		}
+}

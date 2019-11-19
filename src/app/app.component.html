@@ -1,8 +1,8 @@
 <div class="wrapper">
-  <!-- Sidebar  -->
+  <!-- Sidebar  --> 
   <nav id="sidebar" class="active"> 
     <div class="sidebar-header">
-        <img src="img/logo1.png" alt="" width="60px">
+        <img src="assets/img/logo1.png" alt="" width="60px">
     </div>
 
     <ul class="list-unstyled components">
@@ -14,11 +14,11 @@
         <a href="/"><i class="fas fa-home"></i><br>Home</a></li>
       </ng-template>
 
-      <li *ngIf="isAttendance; else attendanceBlock" class="active">
+      <!--<li *ngIf="isAttendance; else attendanceBlock" class="active">
         <a href="/attendance" style="padding: 20px 0px !important;"><i class="fas fa-user-check"></i>Attendance</a></li>
       <ng-template #attendanceBlock><li>
         <a href="/attendance" style="padding: 20px 0px !important;"><i class="fas fa-user-check"></i>Attendance</a></li>
-      </ng-template>
+      </ng-template>-->
           
       <li *ngIf="isProgress; else progressBlock" class="active">
         <a href="/progress"><i class="fas fa-edit"></i>Progress</a>
@@ -27,7 +27,7 @@
         <a href="/progress"><i class="fas fa-edit"></i>Progress</a></li>
       </ng-template>
 
-      <li *ngIf="isPlanning; else planningBlock" class="active">
+      <!--<li *ngIf="isPlanning; else planningBlock" class="active">
         <a href="/planning"><i class="fas fa-calendar-alt"></i>Planning</a>
       </li>
       <ng-template #planningBlock><li>
@@ -46,7 +46,7 @@
       </li>
       <ng-template #activityBlock><li>
         <a href="/activity"><i class="fas fa-cubes"></i>Activities</a></li>
-      </ng-template>      
+      </ng-template>-->      
                 
     </ul>
   </nav>
@@ -71,4 +71,3 @@
         });
     });
 </script>
-

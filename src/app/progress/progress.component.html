@@ -3,24 +3,22 @@
         <h3>Progress</h3>
         
         <div>
-            Friday XX, May, 2019
+            <!--Friday XX, May, 2019-->
+            {{fecha|date:'EEEE d, MMM, yyyy'}}
         </div>
     </div>
 </nav>
 
-<div class="col-xl-12 d-flex">
-    <div class="col-sm-3">
+
+<div class="row" style="margin-right: 0; margin-left: 0" >
+    <div class="student" *ngFor="let student of students; let indexStudent = index; ">
         <div class="card">
             <div class="card-header">
-                <span class="badge float-right" style="font-size: 1.3em" (click)= "open(content,'Callum')"><i id="camera"  class="fa fa-camera-retro"></i></span>
-                <span class="badge float-right" style="font-size: 1.3em" (click)= "openComment(contenido,'Callum')"><i class="fas fa-comment-alt"></i></span>
-               
-                <!--<div class="mb-0">
-                     <span class="badge float-left" style="font-size: 1.3em"><i class="fas fa-comment-alt"></i></span>
-                    <label for="browse"><span class="badge float-left" style="font-size: 1.3em"><i class="fas fa-camera-retro"></i></span></label>
-                    <input type="file" id="browse" name="browse" style="display: none">
-                </div>-->
-                <h5 class="card-title mb-0"><a href="/studentDetail/1">Callum</a></h5>             
+                <span class="badge float-right" style="font-size: 1.3em" (click)= "open(content,student.firstname)"><i id="camera"  class="fa fa-camera-retro"></i></span>
+                <span class="badge float-right" style="font-size: 1.3em" (click)= "openComment(contenido,student.firstname)"><i class="fas fa-comment-alt"></i></span>
+                <span class="badge float-right" style="font-size: 1.3em" (click)="OnClickChange(indexStudent)" *ngIf="selectedInteraction[indexStudent]===false"><i class="fa fa-user-check" [ngStyle]="{'color':'black'}"></i></span>
+                <span class="badge float-right" style="font-size: 1.3em" (click)="OnClickChange(indexStudent)" *ngIf="selectedInteraction[indexStudent]"><i class="fa fa-user-check" [ngStyle]="{'color':'#33cc00'}"></i></span>
+                <h5 class="card-title mb-0"><a [attr.href]="'progress/students/' + student.id">{{student.firstname}}</a></h5>
             </div>
             <div class="card-body">
                 <table class="table table-sm">
@@ -33,684 +31,22 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>SPL</td>
-                        <td>*</td>
-                        <td>SPL</td>
-                        <td>/</td>
-                    </tr>
-                    <tr>
-                        <td>#rods</td>
-                        <td>*</td>
-                        <td>#rods</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>BS</td>
-                        <td>*</td>
-                        <td>BS</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Browm</td>
-                        <td>*</td>
-                        <td>Browm</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Care of</td>
-                        <td>*</td>
-                        <td>Care of</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Canada</td>
-                        <td>*</td>
-                        <td>Canada</td>
-                        <td>*</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="card">
-            <div class="card-header">
-                <span class="badge float-right" style="font-size: 1.3em"><i class="fas fa-comment-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-camera-retro"></i></span>
-                <h5 class="card-title mb-0">Callum</h5>
-            </div>
-            <div class="card-body">
-                <table class="table table-sm">
-                    <thead>
-                    <tr>
-                        <th scope="col">Present</th>
-                        <th scope="col"></th>
-                        <th scope="col">Check</th>
-                        <th scope="col"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>SPL</td>
-                        <td>*</td>
-                        <td>SPL</td>
-                        <td>/</td>
-                    </tr>
-                    <tr>
-                        <td>#rods</td>
-                        <td>*</td>
-                        <td>#rods</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>BS</td>
-                        <td>*</td>
-                        <td>BS</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Browm</td>
-                        <td>*</td>
-                        <td>Browm</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Care of</td>
-                        <td>*</td>
-                        <td>Care of</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Canada</td>
-                        <td>*</td>
-                        <td>Canada</td>
-                        <td>*</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="card">
-            <div class="card-header">
-                <span class="badge float-right" style="font-size: 1.3em"><i class="fas fa-comment-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-camera-retro"></i></span>
-                <h5 class="card-title mb-0">Callum</h5>
-            </div>
-            <div class="card-body">
-                <table class="table table-sm">
-                    <thead>
-                    <tr>
-                        <th scope="col">Present</th>
-                        <th scope="col"></th>
-                        <th scope="col">Check</th>
-                        <th scope="col"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>SPL</td>
-                        <td>*</td>
-                        <td>SPL</td>
-                        <td>/</td>
-                    </tr>
-                    <tr>
-                        <td>#rods</td>
-                        <td>*</td>
-                        <td>#rods</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>BS</td>
-                        <td>*</td>
-                        <td>BS</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Browm</td>
-                        <td>*</td>
-                        <td>Browm</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Care of</td>
-                        <td>*</td>
-                        <td>Care of</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Canada</td>
-                        <td>*</td>
-                        <td>Canada</td>
-                        <td>*</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="card">
-            <div class="card-header">
-                <span class="badge float-right" style="font-size: 1.3em"><i class="fas fa-comment-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-camera-retro"></i></span>
-                <h5 class="card-title mb-0">Callum</h5>
-            </div>
-            <div class="card-body">
-                <table class="table table-sm">
-                    <thead>
-                    <tr>
-                        <th scope="col">Present</th>
-                        <th scope="col"></th>
-                        <th scope="col">Check</th>
-                        <th scope="col"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>SPL</td>
-                        <td>*</td>
-                        <td>SPL</td>
-                        <td>/</td>
-                    </tr>
-                    <tr>
-                        <td>#rods</td>
-                        <td>*</td>
-                        <td>#rods</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>BS</td>
-                        <td>*</td>
-                        <td>BS</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Browm</td>
-                        <td>*</td>
-                        <td>Browm</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Care of</td>
-                        <td>*</td>
-                        <td>Care of</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Canada</td>
-                        <td>*</td>
-                        <td>Canada</td>
-                        <td>*</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="col-xl-12 d-flex mt-4">
-    <div class="col-sm-3">
-        <div class="card">
-            <div class="card-header">
-                <span class="badge float-right" style="font-size: 1.3em"><i class="fas fa-comment-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-camera-retro"></i></span>
-                <h5 class="card-title mb-0">Callum</h5>
-            </div>
-            <div class="card-body">
-                <table class="table table-sm">
-                    <thead>
-                    <tr>
-                        <th scope="col">Present</th>
-                        <th scope="col"></th>
-                        <th scope="col">Check</th>
-                        <th scope="col"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>SPL</td>
-                        <td>*</td>
-                        <td>SPL</td>
-                        <td>/</td>
-                    </tr>
-                    <tr>
-                        <td>#rods</td>
-                        <td>*</td>
-                        <td>#rods</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>BS</td>
-                        <td>*</td>
-                        <td>BS</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Browm</td>
-                        <td>*</td>
-                        <td>Browm</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Care of</td>
-                        <td>*</td>
-                        <td>Care of</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Canada</td>
-                        <td>*</td>
-                        <td>Canada</td>
-                        <td>*</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="card">
-            <div class="card-header">
-                <span class="badge float-right" style="font-size: 1.3em"><i class="fas fa-comment-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-camera-retro"></i></span>
-                <h5 class="card-title mb-0">Callum</h5>
-            </div>
-            <div class="card-body">
-                <table class="table table-sm">
-                    <thead>
-                    <tr>
-                        <th scope="col">Present</th>
-                        <th scope="col"></th>
-                        <th scope="col">Check</th>
-                        <th scope="col"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>SPL</td>
-                        <td>*</td>
-                        <td>SPL</td>
-                        <td>/</td>
-                    </tr>
-                    <tr>
-                        <td>#rods</td>
-                        <td>*</td>
-                        <td>#rods</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>BS</td>
-                        <td>*</td>
-                        <td>BS</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Browm</td>
-                        <td>*</td>
-                        <td>Browm</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Care of</td>
-                        <td>*</td>
-                        <td>Care of</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Canada</td>
-                        <td>*</td>
-                        <td>Canada</td>
-                        <td>*</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="card">
-            <div class="card-header">
-                <span class="badge float-right" style="font-size: 1.3em"><i class="fas fa-comment-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-camera-retro"></i></span>
-                <h5 class="card-title mb-0">Callum</h5>
-            </div>
-            <div class="card-body">
-                <table class="table table-sm">
-                    <thead>
-                    <tr>
-                        <th scope="col">Present</th>
-                        <th scope="col"></th>
-                        <th scope="col">Check</th>
-                        <th scope="col"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>SPL</td>
-                        <td>*</td>
-                        <td>SPL</td>
-                        <td>/</td>
-                    </tr>
-                    <tr>
-                        <td>#rods</td>
-                        <td>*</td>
-                        <td>#rods</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>BS</td>
-                        <td>*</td>
-                        <td>BS</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Browm</td>
-                        <td>*</td>
-                        <td>Browm</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Care of</td>
-                        <td>*</td>
-                        <td>Care of</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Canada</td>
-                        <td>*</td>
-                        <td>Canada</td>
-                        <td>*</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="card">
-            <div class="card-header">
-                <span class="badge float-right" style="font-size: 1.3em"><i class="fas fa-comment-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-camera-retro"></i></span>
-                <h5 class="card-title mb-0">Callum</h5>
-            </div>
-            <div class="card-body">
-                <table class="table table-sm">
-                    <thead>
-                    <tr>
-                        <th scope="col">Present</th>
-                        <th scope="col"></th>
-                        <th scope="col">Check</th>
-                        <th scope="col"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>SPL</td>
-                        <td>*</td>
-                        <td>SPL</td>
-                        <td>/</td>
-                    </tr>
-                    <tr>
-                        <td>#rods</td>
-                        <td>*</td>
-                        <td>#rods</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>BS</td>
-                        <td>*</td>
-                        <td>BS</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Browm</td>
-                        <td>*</td>
-                        <td>Browm</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Care of</td>
-                        <td>*</td>
-                        <td>Care of</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Canada</td>
-                        <td>*</td>
-                        <td>Canada</td>
-                        <td>*</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="col-xl-12 d-flex mt-4">
-    <div class="col-sm-3">
-        <div class="card">
-            <div class="card-header">
-                <span class="badge float-right" style="font-size: 1.3em"><i class="fas fa-comment-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-camera-retro"></i></span>
-                <h5 class="card-title mb-0">Callum</h5>
-            </div>
-            <div class="card-body">
-                <table class="table table-sm">
-                    <thead>
-                    <tr>
-                        <th scope="col">Present</th>
-                        <th scope="col"></th>
-                        <th scope="col">Check</th>
-                        <th scope="col"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>SPL</td>
-                        <td>*</td>
-                        <td>SPL</td>
-                        <td>/</td>
-                    </tr>
-                    <tr>
-                        <td>#rods</td>
-                        <td>*</td>
-                        <td>#rods</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>BS</td>
-                        <td>*</td>
-                        <td>BS</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Browm</td>
-                        <td>*</td>
-                        <td>Browm</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Care of</td>
-                        <td>*</td>
-                        <td>Care of</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Canada</td>
-                        <td>*</td>
-                        <td>Canada</td>
-                        <td>*</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="card">
-            <div class="card-header">
-                <span class="badge float-right" style="font-size: 1.3em"><i class="fas fa-comment-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-camera-retro"></i></span>
-                <h5 class="card-title mb-0">Callum</h5>
-            </div>
-            <div class="card-body">
-                <table class="table table-sm">
-                    <thead>
-                    <tr>
-                        <th scope="col">Present</th>
-                        <th scope="col"></th>
-                        <th scope="col">Check</th>
-                        <th scope="col"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>SPL</td>
-                        <td>*</td>
-                        <td>SPL</td>
-                        <td>/</td>
-                    </tr>
-                    <tr>
-                        <td>#rods</td>
-                        <td>*</td>
-                        <td>#rods</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>BS</td>
-                        <td>*</td>
-                        <td>BS</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Browm</td>
-                        <td>*</td>
-                        <td>Browm</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Care of</td>
-                        <td>*</td>
-                        <td>Care of</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Canada</td>
-                        <td>*</td>
-                        <td>Canada</td>
-                        <td>*</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="card">
-            <div class="card-header">
-                <span class="badge float-right" style="font-size: 1.3em"><i class="fas fa-comment-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-camera-retro"></i></span>
-                <h5 class="card-title mb-0">Callum</h5>
-            </div>
-            <div class="card-body">
-                <table class="table table-sm">
-                    <thead>
-                    <tr>
-                        <th scope="col">Present</th>
-                        <th scope="col"></th>
-                        <th scope="col">Check</th>
-                        <th scope="col"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>SPL</td>
-                        <td>*</td>
-                        <td>SPL</td>
-                        <td>/</td>
-                    </tr>
-                    <tr>
-                        <td>#rods</td>
-                        <td>*</td>
-                        <td>#rods</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>BS</td>
-                        <td>*</td>
-                        <td>BS</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Browm</td>
-                        <td>*</td>
-                        <td>Browm</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Care of</td>
-                        <td>*</td>
-                        <td>Care of</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Canada</td>
-                        <td>*</td>
-                        <td>Canada</td>
-                        <td>*</td>
-                    </tr>
-                    </tbody>
-                </table>
-        	</div>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="card">
-            <div class="card-header">
-                <span class="badge float-right" style="font-size: 1.3em"><i class="fas fa-comment-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-camera-retro"></i></span>
-                <h5 class="card-title mb-0">Callum</h5>
-            </div>
-            <div class="card-body">
-                <table class="table table-sm">
-                    <thead>
-                    <tr>
-                        <th scope="col">Present</th>
-                        <th scope="col"></th>
-                        <th scope="col">Check</th>
-                        <th scope="col"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>SPL</td>
-                        <td>*</td>
-                        <td>SPL</td>
-                        <td>/</td>
-                    </tr>
-                    <tr>
-                        <td>#rods</td>
-                        <td>*</td>
-                        <td>#rods</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>BS</td>
-                        <td>*</td>
-                        <td>BS</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Browm</td>
-                        <td>*</td>
-                        <td>Browm</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Care of</td>
-                        <td>*</td>
-                        <td>Care of</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>Canada</td>
-                        <td>*</td>
-                        <td>Canada</td>
-                        <td>*</td>
-                    </tr>
+                    
+                    <tr *ngFor="let act of student.progress; let i = index; let even = even; ">
+
+                        <td *ngIf="even" (click)= "openStudent(contentStudent,student.firstname,act.activityabb,act.statusid,i,indexStudent)">{{act.activityabb}}</td>
+
+                        <td *ngIf="even && act.statusid == 1 " >/</td>
+                        <td *ngIf="even && act.statusid == 2 " >x</td>
+                        <td *ngIf="even && act.statusid == 3 " >*</td>
+
+                        <td *ngIf="even">{{student.progress[i+1].activityabb}}</td>
+
+                        <td *ngIf="even && student.progress[i+1].statusid == 1 " >/</td>
+                        <td *ngIf="even && student.progress[i+1].statusid == 2 " >x</td>
+                        <td *ngIf="even && student.progress[i+1].statusid == 3 " >*</td>
+                    </tr>
+                    
                     </tbody>
                 </table>
             </div>
@@ -718,46 +54,153 @@
     </div>
 </div>
 
-<ng-template #contenido let-c="close" let-d="dismiss">
+<!--Modals-->
+<ng-template #contentStudent let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Hi Callum!</h4>
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+    <h4 class="modal-title" id="modal-basic-title">{{modalContentStudent.name}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div id="hola" class="modal-body">
-    <label>Add a comment: </label>
-    <br>
-    <textarea [(ngModel)]="str"></textarea>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+    <!--<h5>Select Option: </h5>-->
+
+    <table class="table table-sm">
+        <thead>
+        <tr> 
+            <th scope="col">Activity
+            </th>
+            <th scope="col">Presentation
+              <!--<small>(Click'd one option)</small>-->
+            </th>
+            <th scope="col">Activity
+            </th>
+            <th scope="col">Check
+            </th>
+            <!--<th scope="col">Activity</th>
+            <th scope="col">/</th>
+            <th scope="col">X</th>
+            <th scope="col">*</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let act of modalContentStudent.activity; index as i">
+          <td>{{act.activity}} </td>
+          <td >
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+              <div class="btn-group btn-group-toggle btn-group-lg mr-2" role="group" aria-label="First group">
+                <label class="btn btn-outline-success" [ngClass]="{active : selectedIndex[i][0] == true}">
+                  <input type="radio" name="options" id="option1" autocomplete="off" checked (click) = "OnClick(i,0)"> / 
+                </label>    
+                <label class="btn btn-outline-success" [ngClass]="{active : selectedIndex[i][1] == true}">
+                    <input type="radio" name="options" id="option2" autocomplete="off" (click) = "OnClick(i,1)"> x
+                </label>
+                <label class="btn btn-outline-success" [ngClass]="{active : selectedIndex[i][2] == true}">
+                    <input type="radio" name="options" id="option3" autocomplete="off" (click) = "OnClick(i,2)"> *
+                </label>
+              </div>
+              <div class="btn-group btn-group-toggle" role="group" aria-label="Second group">
+                <button type="button" class="btn btn-outline-success" (click)="NextActivity(act,modalContentStudent)">Next
+                </button>
+              </div>
+            </div>
+            <!--<div class="btn-group btn-group-toggle btn-group-lg ">
+              <label class="btn btn-outline-success" [ngClass]="{active : selectedIndex[i][0] == true}">
+                  <input type="radio" name="options" id="option1" autocomplete="off" checked (click) = "OnClick(i,0)"> / 
+              </label>    
+              <label class="btn btn-outline-success" [ngClass]="{active : selectedIndex[i][1] == true}">
+                  <input type="radio" name="options" id="option2" autocomplete="off" (click) = "OnClick(i,1)"> x
+              </label>
+              <label class="btn btn-outline-success" [ngClass]="{active : selectedIndex[i][2] == true}">
+                  <input type="radio" name="options" id="option3" autocomplete="off" (click) = "OnClick(i,2)"> *
+              </label>
+            </div> 
+            <div class="btn-group btn-group-toggle btn-group-lg mr-2 ">
+              <label class="btn btn-outline-success" [ngClass]="{active : selectedCheckIndex[i] == true}">
+                  <input type="radio" name="options" id="option1" autocomplete="off" (click) = "OnClickCheck(i)"><i class="fa fa-check"></i>
+              </label>
+            </div>-->
+          </td>
+          <td>{{act.activity}} </td>
+          <td >
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+              <div class="btn-group btn-group-toggle btn-group-lg mr-2">
+                <label class="btn btn-outline-success" [ngClass]="{active : selectedCheckIndex[i][0] == true}">
+                    <input type="radio" name="options" id="option1" autocomplete="off" (click) = "OnClickCheck(i,0)">X
+                </label>
+                <label class="btn btn-outline-success" [ngClass]="{active : selectedCheckIndex[i][1] == true}">
+                    <input type="radio" name="options" id="option2" autocomplete="off" (click) = "OnClickCheck(i,1)"><i class="fa fa-asterisk"></i>
+                </label>
+              </div>
+              <div class="btn-group btn-group-toggle" role="group" aria-label="Second group">
+                <button type="button" class="btn btn-outline-success" (click)="NextActivity(act,modalContentStudent)">Next
+                </button>
+              </div>
+            </div>
+          </td>
+        </tr>                    
+        </tbody>
+    </table>
+
   </div>
 </ng-template>
 
-<ng-template #content let-c="close" let-d="dismiss">
+<ng-template #contenido let-modal>
+  <form [formGroup]="commentForm" (ngSubmit)="onCommentSubmit(commentForm.value)">
+  
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Hi Callum!</h4>
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+    <h4 class="modal-title" id="modal-basic-title">Hi {{modalContent.name}}!</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
+  
   <div id="hola" class="modal-body">
-    <p>Add a Photo!</p>
-    <input type="file" id="browse" name="browse">
-    <br><br>
     <label>Add a comment: </label>
     <br>
-    <textarea [(ngModel)]="str"></textarea>
+     <textarea formControlName="comment"></textarea>
   </div>
+  
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+    <button type="submit" class="btn btn-outline-dark">Save</button>
   </div>
+  </form>
+</ng-template>
+
+<ng-template #content let-modal>
+  <form [formGroup]="photoForm" (ngSubmit)="onPhotoSubmit(photoForm.value)">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Hi {{modalContent.name}}!</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div id="hola" class="modal-body">
+    <p>Add a Photo!</p>
+    
+    <input type="file" formControlName="photo" (change)="handleFileInput($event.target.files)">
+    
+    <br><br>
+    
+    <label>Add a comment: </label>
+    
+    <br>
+    
+    <textarea formControlName="comment"></textarea>
+
+  </div>
+  
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-outline-dark">Save</button>
+  </div>
+  
+  </form>
 </ng-template>
 
 <script type="text/javascript">
-	$("#hola:input").change(function(e) {
-		console.log("ASDasd")
+    $("#hola:input").change(function(e) {
+        console.log("ASDasd")
 
     for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
         

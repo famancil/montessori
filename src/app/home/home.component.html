@@ -1,159 +1,118 @@
-<style type="text/css">
- body, html {
-  height: 100%;
-  margin: 0;
-}
+<div class="bg" [style.backgroundImage]="backgroundImage">
+  <div class="text-center justify-content-center" style="padding:5%; color: white; background-color:rgba(192,192,192,0.7);">
+    <h1>
+      Welcome to {{ title }}'s System
+    </h1>
+  </div>
+  
+  <br>
 
-.bg {
-  /* The image used */
-  background-image: url("about5.jpg");
-  opacity: 1;
-
-  /* Full height */
-  height: 100%; 
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.text {
-  color: white;
-  font-size: 1.1vw;
-  /*font-size: 16px;*/
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-
-}
-  .overlay {
-position: absolute;
-top: 0;
-bottom: 0;
-left: 0;
-right: 0;
-height: 100%;
-width: 100%;
-opacity: 0;
-transition: .5s ease;
-background-color: #ff944d;
-}
-
-.card:hover .overlay {
-  opacity: 1;
-}
-.card {
-        margin: 0 auto; /* Added */       
-        margin-bottom: 10px; /* Added */}
-
-</style>
-
-<div class="bg">
-	<div class="text-center justify-content-center">
-		<h1 style="padding: 30px; color: white; background-color:rgba(192,192,192,0.7);">
-		 	Welcome to {{ title }}'s System
-		</h1>
-	</div>
-
-
-    <div class="container mt-5 mb-2">
-      <div class="d-flex justify-content-center">
-       
-        <div class="card col-sm-3 rounded-top text-white bg-warning" style="width: 18rem; height: 10rem;">
-           
-            <div class="overlay rounded-top">
-              <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                <div class="mt-1" style="text-align: center">
-                  <a class="btn-primary btn" href="/" style=" width: 100px; margin: 0 auto;">Click Me!</a>
-                </div>
-              </div>
-            </div> 
-            
-			<div class="card-body">
-				<h5 align="center" style="margin-top: 15%">
-				  <b>Attedance</b>
-				  <div class="mt-1"><i class="fas fa-user-check fa-2x" ></i></div>
-				</h5>
-			</div>
-        </div>
-        
-        <div class="card col-sm-3 rounded-top text-white bg-primary" style="width: 18rem; height: 10rem;">
-       
-            <div class="overlay rounded-top">
-              <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                <div class="mt-1" style="text-align: center">
-                  <a class="btn-primary btn" href="/progress" style=" width: 100px; margin: 0 auto;">Click Me!</a>
-                </div>
-              </div>
-            </div> 
-          <div class="card-body">
-            <h5 align="center" style="margin-top: 15%">
-              <b>Progress</b>
-              <div class="mt-1"><i class="fas fa-edit fa-2x" ></i></div>
-            </h5>
-          </div>
-        </div>
-
-        <div class="card col-sm-3 rounded-top text-white bg-success" style="width: 18rem; height: 10rem;">
-         
-            <div class="overlay rounded-top">
-              <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                <div class="mt-1" style="text-align: center">
-                  <a class="btn-primary btn" href="/" style=" width: 100px; margin: 0 auto;">Click Me!</a>
-                </div>
-              </div>          
-            </div> 
-           
-          <div class="card-body">
-            <h5 align="center" style="margin-top: 15%">
-              <b>Planning</b>
-              <div class="mt-1"><i class="fas fa-calendar-alt fa-2x" ></i></div>
-            </h5>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="d-flex justify-content-center">
-        <div class="card rounded-top text-white bg-secondary" style="width: 18rem; height: 10rem;">
-         
-            <div class="overlay rounded-top">
-              <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                <div class="mt-1" style="text-align: center">
-                  <a class="btn-primary btn" href="/" style=" width: 100px; margin: 0 auto;">Click Me!</a>
-                </div>
-              </div>          
-            </div> 
-           
-          <div class="card-body">
-            <h5 align="center" style="margin-top: 15%">
-              <b>Reports</b>
-              <div class="mt-1"><i class="fas fa-chart-bar fa-2x" ></i></div>
-            </h5>
-          </div>
-        </div>
-        <div class="card rounded-top text-white bg-danger" style="width: 18rem; height: 10rem;">
+  <div class="row justify-content-center" style="margin-right: 0; margin-left: 0">
+    <div class="col-sm-5">
+      <div class="card rounded-top text-white bg-warning">
           
-			<div class="overlay rounded-top">
-				<div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-				  <div class="mt-1" style="text-align: center">
-				    <a class="btn-primary btn" href="/" style=" width: 100px; margin: 0 auto;">Click Me!</a>
-				  </div>
-				</div>
-			</div> 
-			<div class="card-body">
-				<h5 align="center" style="margin-top: 15%">
-				  <b>Activity</b>
-				  <div class="mt-1"><i class="fas fa-cubes fa-2x" ></i></div>
-				</h5>
-			</div>
+        <div class="overlay rounded-top">
+          <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            <div class="mt-1" style="text-align: center">
+              <a class="btn-primary btn" href="/" style=" width: 100px; margin: 0 auto;">Click Me!</a>
+            </div>
+          </div>
+        </div> 
+          
+        <div class="card-body">
+          <h5 align="center">
+            <b>Attedance</b>
+            <div class="mt-1"><i class="fas fa-user-check fa-2x" ></i></div>
+          </h5>
         </div>
+
       </div>
     </div>
+    <div class="col-sm-5">
+      <div class="card rounded-top text-white bg-primary">
+          
+        <div class="overlay rounded-top">
+          <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            <div class="mt-1" style="text-align: center">
+              <a class="btn-primary btn" href="/progress" style=" width: 100px; margin: 0 auto;">Click Me!</a>
+            </div>
+          </div>
+        </div> 
+          
+        <div class="card-body">
+          <h5 align="center">
+            <b>Progress</b>
+            <div class="mt-1"><i class="fas fa-edit fa-2x" ></i></div>
+          </h5>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center" style="margin-right: 0; margin-left: 0">
+    <div class="col-sm-5">
+      <div class="card rounded-top text-white bg-success">
+          
+        <div class="overlay rounded-top">
+          <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            <div class="mt-1" style="text-align: center">
+              <a class="btn-primary btn" href="/" style=" width: 100px; margin: 0 auto;">Click Me!</a>
+            </div>
+          </div>
+        </div> 
+          
+        <div class="card-body">
+          <h5 align="center">
+            <b>Planning</b>
+            <div class="mt-1"><i class="fas fa-calendar fa-2x" ></i></div>
+          </h5>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-sm-5">
+
+      <div class="card rounded-top text-white bg-secondary">
+          
+        <div class="overlay rounded-top">
+          <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            <div class="mt-1" style="text-align: center">
+              <a class="btn-primary btn" href="/" style=" width: 100px; margin: 0 auto;">Click Me!</a>
+            </div>
+          </div>
+        </div> 
+          
+        <div class="card-body">
+          <h5 align="center">
+            <b>Reports</b>
+            <div class="mt-1"><i class="fas fa-chart-bar fa-2x" ></i></div>
+          </h5>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <div class="row justify-content-center" style="margin-right: 0; margin-left: 0">
+    <div class="col-sm-6">
+      <div class="card rounded-top text-white bg-danger">
+          
+        <div class="overlay rounded-top">
+          <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            <div class="mt-1" style="text-align: center">
+              <a class="btn-primary btn" href="/progress" style=" width: 100px; margin: 0 auto;">Click Me!</a>
+            </div>
+          </div>
+        </div> 
+          
+        <div class="card-body">
+          <h5 align="center">
+            <b>Activity</b>
+            <div class="mt-1"><i class="fas fa-cubes fa-2x" ></i></div>
+          </h5>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </div>

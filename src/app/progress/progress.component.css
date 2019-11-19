@@ -1,0 +1,40 @@
+.student{
+	width: 25%;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+@media (max-width: 866px) {
+  .student{
+	width: 33.3%;
+	padding-right: 10px;
+	padding-left: 10px;
+   }
+}
+
+@media (max-width: 666px) {
+  .student{
+	width: 50%;
+	padding-right: 10px;
+	padding-left: 10px;
+   }
+}
+
+@media (max-width: 466px) {
+  .student{
+	width: 100%;
+	padding-right: 10px;
+	padding-left: 10px;
+   }
+}
+
+.modal-body {
+	max-height:500px; 
+    overflow-y:auto;
+}
+
+.btn-outline-success:hover {  
+    color: #28a745;
+    background-color:transparent;
+    border-color: #28a745;
+}

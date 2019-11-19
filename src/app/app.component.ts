@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 
 @Component({
@@ -7,7 +7,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'montessori';
+  title = 'bloom-front-end';
   public isHome: boolean= false;
   public isAttendance: boolean= false;
   public isProgress: boolean= false;
@@ -17,12 +17,13 @@ export class AppComponent {
 
   constructor(private location: Location) {
 	if(location.path() == "") this.isHome=true;
-	if(location.path() == "/attendance") this.isAttendance=true;
-	if(location.path() == "/progress") this.isProgress=true;
-	if(location.path() == "/planning") this.isPlanning=true;
+  if(location.path().indexOf("/attendance") > -1) this.isAttendance=true;
+  if(location.path().indexOf("/progress") > -1) this.isProgress=true;
+  if(location.path().indexOf("/planning") > -1) this.isPlanning=true;
+  if(location.path().indexOf("/reports") > -1) this.isReports=true;
+  if(location.path().indexOf("/activity") > -1) this.isActivity=true;
+	/*if(location.path() == "/planning") this.isPlanning=true;
 	if(location.path() == "/reports") this.isReports=true;
-	if(location.path() == "/activity") this.isActivity=true;
-  }
-
-  
+	if(location.path() == "/activity") this.isActivity=true;*/
+  }  
 }
